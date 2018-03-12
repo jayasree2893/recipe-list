@@ -1,0 +1,99 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html" />
+<link rel="import" href="../bower_components/paper-dropdown/paper-dropdown.html" />
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-tooltip/paper-tooltip.html">
+
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html" />
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html" />
+<link rel="import" href="../bower_components/paper-styles/element-styles/paper-material-styles.html">
+<link rel="import" href="../bower_components/paper-styles/default-theme.html">
+
+<dom-module id="recipe-element">
+  <template>
+    <style inclue="paper-material-styles">
+      :host{
+        display:block;
+
+      }
+      .card-actions a{
+        text-decoration: none;
+        color: dodgerblue;
+      }
+    </style>
+    
+    <paper-card  heading="{{commentTitle}}" elevation "5">
+      
+      
+      <div class="card-actions"></div>
+      <template is="dom-if" if="{{actionView}}">
+      <a href="{{actionView}}" id="view" tabindex="-1">
+        <paper-button raised>View</paper-button>
+       </a>
+       <paper-tooltip for="view" animation-delay="0">View comment </paper-tooltip>
+      </template>
+    
+      <template is="dom-if" if="{{actionEdit}}"></template>
+      <a href="{{actionEdit}}" id="edit"  tabindex="-1">
+        <paper-button raised>Edit</paper-button> 
+      </a>
+      <paper-tooltip for="edit" animation-delay="0">Edit comment </paper-tooltip>
+    </template>
+     <template is="dom-if" if="{{actionDelete}}">
+      <a href="{{actionDelete}}" id="delete"  tabindex="-1">
+        <paper-icon-button icon="icons:delete-forever">Delete</paper-icon-button>
+    </a>
+    </template>
+      <paper-tooltip for="delete" animation-delay="0">Delete Cant undo </paper-tooltip>
+    </paper-card>
+</template>
+<script>
+  Polymer({
+    is: 'recipe-element',
+
+    properties:{
+      prop1:{
+        type:String,
+        value:'recipe-element',
+      },
+      commentTitle:{
+        type:String,
+        value: 'Comment Title',
+        reflectToAttribute:true,
+        notify:true,
+
+      },
+      actionView:{
+        type: String,
+        reflectToAttribute:true,
+        notify:true,
+      },
+      actionEdit:{
+        type: String,
+        reflectToAttribute:true,
+        notify:true,
+      },
+      actionDelete:{
+        type: String,
+        reflectToAttribute:true,
+        notify:true,
+      },
+    },
+  });
+</script>
+</dom-module>

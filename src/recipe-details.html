@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="recipe-details">
+  <template>
+   
+
+      <h1>Hi! Your in Recipe Details Tab!!</h1>
+ 
+  </template>
+
+  <script>
+    class RecipeDetails extends Polymer.Element {
+      static get is() { return 'recipe-details'; }
+      static get properties() {
+        return {
+          // This shouldn't be neccessary, but the Analyzer isn't picking up
+          // Polymer.Element#rootPath
+         
+        };
+      }
+    }
+
+    window.customElements.define(RecipeDetails.is, RecipeDetails);
+  </script>
+</dom-module>
