@@ -3,5 +3,16 @@
 	"view": "src/recipe-details.html",
 	"edit": "node/123/comments/34/edit",
 	"body": "<p> A new comment here!<p>"
+}, {
+	"title": "Veggie Pasta",
+	"view": "src/recipe-details.html",
+	"edit": "node/123/comments/34/edit",
+	"body": "<p> A new comment here!<p>"
+}, {
+	"title": "Cobb Salad",
+	"view": "src/recipe-details.html",
+	"edit": "node/123/comments/34/edit",
+	"delete":"node/123/comments/34/delete",
 
+	"body": "<p> A new comment here!<p>"
 }]

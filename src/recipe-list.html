@@ -30,12 +30,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style inclue="paper-material-styles">
       :host{
-        display:block;
+        display: inline-block;
 
       }
       .card-actions a{
         text-decoration: none;
-        color: dodgerblue;
+        color: var(--paper-orang-a700);
       }
     </style>
     <iron-ajax
@@ -44,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     handle-as="json"
     last-response="{{response}}"></iron-ajax>
   
-    <template is="dom-repeat"  items="[[_toArray(response) ]]" as="comment">
+<template is="dom-repeat"  items="[[_toArray(response)]]" as="comment">
 
 <recipe-element comment-title="{{comment.title}}" action-view="{{comment.view}}"
 action-edit="{{comment.edit}}" action-delete="{{comment.delete}}">{{comment.body}}</recipe-element>
